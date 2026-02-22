@@ -1,0 +1,40 @@
+<section class="card">
+  <div class="card-header">
+    <h2>Users</h2>
+    <a routerLink="/users/new" class="btn btn-primary">Add User</a>
+  </div>
+
+  <p *ngIf="successMessage" class="message success">{{ successMessage }}</p>
+  <p *ngIf="errorMessage" class="message error">{{ errorMessage }}</p>
+
+  <p *ngIf="loading">Loading users...</p>
+
+  <div class="table-wrapper" *ngIf="!loading && users.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td class="actions">
+            <a [routerLink]="['/users', user.id]" class="btn">View</a>
+            <a [routerLink]="['/users', user.id, 'edit']" class="btn">Edit</a>
+            <button type="button" class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p *ngIf="!loading && users.length === 0">No users found. Add one to get started.</p>
+</section>

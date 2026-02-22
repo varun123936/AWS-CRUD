@@ -1,0 +1,16 @@
+<div class="app-shell">
+  <header class="app-header">
+    <div class="brand">
+      <h1>{{ title }}</h1>
+      <p>Angular 18 frontend connected to Express + MySQL backend</p>
+    </div>
+    <nav class="top-nav">
+      <a routerLink="/users" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Users</a>
+      <a routerLink="/users/new" routerLinkActive="active-link">Add User</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
