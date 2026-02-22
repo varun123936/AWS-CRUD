@@ -31,7 +31,7 @@ CRUD-Node-Ang/
    - Use a database name matching `DB_NAME` in `backend/.env` (example below uses `world`):
 
    ```sql
-   CREATE DATABASE IF NOT EXISTS world;
+   CREATE DATABASE IF NOT EXISTS myworld;
    USE world;
 
    CREATE TABLE IF NOT EXISTS users (
